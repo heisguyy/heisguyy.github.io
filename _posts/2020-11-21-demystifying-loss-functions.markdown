@@ -3,6 +3,7 @@ layout: post
 title:  "Demystifying Loss Functions:Cross Entropy"
 date:   2020-11-21 12:34:34 +0100
 categories: blog
+permalink: "/blog/demystifying-loss-functions/"
 ---
 
 Popular and extensive machine learning libraries have provided the luxury of just building machine learning models without knowing what's going on under the hood, with `.fit()` a machine learning model is ready. But to improve the performance of models we have to dive deep into the dark and dreaded waters of **OPTIMIZATION**. 
