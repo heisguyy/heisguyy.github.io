@@ -207,9 +207,18 @@ nav.navigation a {
     height: 10px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 701px) {
     #nav-content-hamburger {
         display: none;
+    }
+    #nav-content {
+        display: flex !important; /* Ensure that the navigation menu is always shown */
+        position: static !important; /* Reset the position to default */
+        background: none !important; /* Reset the background color to default */
+        width: auto !important; /* Reset the width to default */
+        text-align: right;
+        top: auto;
+        z-index: 0;
     }
 }
 
@@ -458,7 +467,6 @@ nav.navigation a {
 #single .content a {
     text-decoration: underline;
 }
-
 
 #archive {
     max-width: 580px;
