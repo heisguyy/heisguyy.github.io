@@ -8,7 +8,7 @@ permalink: "/blog/demystifying-loss-functions/"
 
 Popular and extensive machine learning libraries have provided the luxury of just building machine learning models without knowing what's going on under the hood, with `.fit()` a machine learning model is ready. But to improve the performance of models we have to dive deep into the dark and dreaded waters of **OPTIMIZATION**. 
 
-![Deep dive]({{ site.baseurl }}/assets/gif/22434750.gif)
+<img src="{{ site.baseurl }}/assets/gif/22434750.gif" width="100%" />
 
 Optimization in machine learning is a process by which a model measures its inefficiencies and tries to improve on them. At the heart of optimization are loss functions, which is sometimes called cost functions or objective functions. Loss functions are simply what provide the measurement of inefficiencies in a model. Understanding loss functions plays a big role in improving your modelling skill and we will be going through a very popular classification loss function called **CROSS ENTROPY**
 
