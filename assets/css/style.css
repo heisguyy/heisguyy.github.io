@@ -612,3 +612,14 @@ nav.navigation a {
     top: 1px;
     color: #bbb;
 }
+
+button[data-cal-link="heisguyy"] {
+    background-color: #000409;
+    height: 28px;
+    position: absolute;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: "AllianceNo2-Regular", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
