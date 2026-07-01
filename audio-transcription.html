@@ -1,0 +1,67 @@
+---
+layout: project
+title: Audio Transcription
+---
+
+<div id="audio-transcription">
+
+    <div class="audio-transcription-steps">
+        <span class="audio-transcription-step is-active" data-step="upload">Upload</span>
+        <span class="audio-transcription-divider">&middot;</span>
+        <span class="audio-transcription-step" data-step="transcribe">Transcribing</span>
+        <span class="audio-transcription-divider">&middot;</span>
+        <span class="audio-transcription-step" data-step="done">Done</span>
+    </div>
+
+    <div class="audio-transcription-card">
+        <div class="audio-transcription-card-body">
+
+            <div class="audio-transcription-state" data-state="idle">
+                <p class="audio-transcription-hint">Drop a recording up to 2 hours long. I&rsquo;ll drop the .txt link right here when it&rsquo;s ready.</p>
+                <div class="audio-transcription-dropzone" id="audio-transcription-dropzone" tabindex="0" role="button" aria-label="Drop audio file here or click to browse">
+                    <div class="audio-transcription-dropzone-title">Drop audio file here</div>
+                    <div class="audio-transcription-dropzone-subtitle">or click to browse &mdash; mp3, wav, m4a</div>
+                </div>
+                <input type="file" accept="audio/*" id="audio-transcription-input" style="display:none">
+            </div>
+
+            <div class="audio-transcription-state" data-state="processing" hidden>
+                <div class="audio-transcription-file-row">
+                    <div class="audio-transcription-filename" id="audio-transcription-processing-filename"></div>
+                    <div class="audio-transcription-filemeta" id="audio-transcription-processing-meta"></div>
+                </div>
+                <div class="audio-transcription-progress">
+                    <div class="audio-transcription-progress-bar"></div>
+                </div>
+                <div class="audio-transcription-status">
+                    <span class="audio-transcription-spinner"></span>
+                    <span id="audio-transcription-status-line"></span>
+                </div>
+                <div class="audio-transcription-eta" id="audio-transcription-eta-line"></div>
+            </div>
+
+            <div class="audio-transcription-state" data-state="done" hidden>
+                <div class="audio-transcription-file-row">
+                    <div class="audio-transcription-filename" id="audio-transcription-done-filename"></div>
+                    <div class="audio-transcription-filemeta" id="audio-transcription-done-meta"></div>
+                </div>
+                <div class="audio-transcription-ready-label">Transcript ready</div>
+                <div class="audio-transcription-link-box">
+                    <code id="audio-transcription-link"></code>
+                </div>
+                <div class="audio-transcription-actions">
+                    <button type="button" class="audio-transcription-btn audio-transcription-btn-ghost" id="audio-transcription-copy">Copy link</button>
+                    <button type="button" class="audio-transcription-btn" id="audio-transcription-download">Download .txt</button>
+                </div>
+                <div class="audio-transcription-reset">
+                    <a href="#" id="audio-transcription-reset-link">Transcribe another</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="audio-transcription-footnote">Processed on-page only &mdash; the link isn&rsquo;t stored after this session.</div>
+    </div>
+
+</div>
+
+<script src="{{ '/assets/js/audio-transcription.js' | relative_url }}"></script>
