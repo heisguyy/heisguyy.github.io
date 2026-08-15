@@ -5,19 +5,25 @@ title: Audio Transcription
 
 <div id="audio-transcription">
 
-    <div class="audio-transcription-steps">
-        <span class="audio-transcription-step is-active" data-step="upload">Upload</span>
+    <div class="audio-transcription-steps" id="audio-transcription-steps">
+        <span class="audio-transcription-step" data-step="create-job">Create Job</span>
         <span class="audio-transcription-divider">&middot;</span>
-        <span class="audio-transcription-step" data-step="transcribe">Transcribing</span>
+        <span class="audio-transcription-step" data-step="upload">Upload</span>
+        <span class="audio-transcription-divider">&middot;</span>
+        <span class="audio-transcription-step" data-step="process">Process</span>
+        <span class="audio-transcription-divider">&middot;</span>
+        <span class="audio-transcription-step" data-step="transcribe">Transcribe</span>
         <span class="audio-transcription-divider">&middot;</span>
         <span class="audio-transcription-step" data-step="done">Done</span>
+    </div>
+    <div class="audio-transcription-steps" id="audio-transcription-steps-failed" hidden>
+        <span class="audio-transcription-step audio-transcription-step-failed is-active">FAILED</span>
     </div>
 
     <div class="audio-transcription-card">
         <div class="audio-transcription-card-body">
 
             <div class="audio-transcription-state" data-state="idle">
-                <p class="audio-transcription-hint">Drop a recording up to 2 hours long. I&rsquo;ll drop the .txt link right here when it&rsquo;s ready.</p>
                 <div class="audio-transcription-dropzone" id="audio-transcription-dropzone" tabindex="0" role="button" aria-label="Drop audio file here or click to browse">
                     <div class="audio-transcription-dropzone-title">Drop audio file here</div>
                     <div class="audio-transcription-dropzone-subtitle">or click to browse &mdash; mp3, wav, m4a</div>
@@ -37,7 +43,20 @@ title: Audio Transcription
                     <span class="audio-transcription-spinner"></span>
                     <span id="audio-transcription-status-line"></span>
                 </div>
-                <div class="audio-transcription-eta" id="audio-transcription-eta-line"></div>
+            </div>
+
+            <div class="audio-transcription-state" data-state="error" hidden>
+                <div class="audio-transcription-file-row">
+                    <div class="audio-transcription-filename" id="audio-transcription-error-filename"></div>
+                    <div class="audio-transcription-filemeta" id="audio-transcription-error-meta"></div>
+                </div>
+                <div class="audio-transcription-ready-label">FAILED</div>
+                <div class="audio-transcription-link-box audio-transcription-link-box-wrap">
+                    <code id="audio-transcription-error-message"></code>
+                </div>
+                <div class="audio-transcription-reset">
+                    <a href="#" id="audio-transcription-error-reset-link">Transcribe another</a>
+                </div>
             </div>
 
             <div class="audio-transcription-state" data-state="done" hidden>
@@ -59,7 +78,7 @@ title: Audio Transcription
             </div>
 
         </div>
-        <div class="audio-transcription-footnote">Processed on-page only &mdash; the link isn&rsquo;t stored after this session.</div>
+        <div class="audio-transcription-footnote" id="audio-transcription-footnote"></div>
     </div>
 
 </div>

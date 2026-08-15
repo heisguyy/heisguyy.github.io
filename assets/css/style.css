@@ -633,6 +633,10 @@ nav.navigation a {
     font-size: 12px;
 }
 
+.audio-transcription-steps[hidden] {
+    display: none;
+}
+
 .audio-transcription-step {
     color: #bbb;
 }
@@ -651,14 +655,6 @@ nav.navigation a {
 
 .audio-transcription-card-body {
     padding: 32px 28px;
-}
-
-.audio-transcription-hint {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #757575;
-    margin: 0 0 20px;
-    text-align: center;
 }
 
 .audio-transcription-dropzone {
@@ -725,6 +721,12 @@ nav.navigation a {
     animation: audio-transcription-scan 1.1s linear infinite;
 }
 
+.audio-transcription-progress-bar.is-determinate {
+    width: 0%;
+    animation: none;
+    transition: width 0.2s ease-out;
+}
+
 .audio-transcription-status {
     display: flex;
     align-items: center;
@@ -747,12 +749,6 @@ nav.navigation a {
     font-size: 14px;
 }
 
-.audio-transcription-eta {
-    font-size: 13px;
-    color: #bbb;
-    text-align: center;
-}
-
 .audio-transcription-ready-label {
     font-size: 13px;
     color: #757575;
@@ -767,6 +763,18 @@ nav.navigation a {
     background: #fcfcfc;
     padding: 9px 10px;
     margin-bottom: 18px;
+}
+
+.audio-transcription-link-box-wrap code {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: initial !important;
+    word-break: break-word;
+}
+
+.audio-transcription-step-failed {
+    color: #c0392b;
+    font-weight: bold;
 }
 
 .audio-transcription-link-box code {
